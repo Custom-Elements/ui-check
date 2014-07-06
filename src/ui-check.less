@@ -1,0 +1,47 @@
+@import "../node_modules/ui-styles/variables.less";
+
+:host {
+  display: inline-block;
+  box-model: border-box;
+  position: relative;
+  .cannot-select-text;
+
+  #checkframe {
+    box-sizing: content-box;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: @hairline-grey;
+    .flat;
+    .border;
+    margin-right: 0.5em;
+    padding: 0.2em;
+    .transition(@transition);
+  }
+  #checkfill {
+    box-sizing: border-box;
+    display: inline-block;
+    .light-tint;
+    .border;
+    width: 1em;
+    height: 1em;
+    .transition(@input-transition);
+    margin-left: 0;
+  }
+  #check[checked] ~ #checklabel {
+    #checkfill {
+      .dark-tint;
+    }
+  }
+  //hide it this way so that we can still get keytab focus
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+:host([focused]) {
+  #checkframe {
+    .focused-border;
+  }
+}

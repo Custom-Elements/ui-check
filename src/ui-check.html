@@ -1,0 +1,15 @@
+<polymer-element name="ui-check" attributes="checked" on-click="{{onContentClick}}">
+<template>
+  <link rel="stylesheet" type="text/css" href="./ui-check.less">
+  <section on-click="{{onCheckClick}}">
+    <input type="checkbox" id="check" on-click="{{onChange}}" on-change="{{onChange}}" on-focus="{{onFocus}}" on-blur="{{onBlur}}">
+    <label id="checklabel" for="check" horizontal layout center>
+      <section id="checkframe">
+        <span id="checkfill"></span>
+      </section>
+      <content></content>
+    </label>
+</section>
+</template>
+<script src="./ui-check.litcoffee"></script>
+</polymer-element>

@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>ui-check</title>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="node_modules/polymer/platform.js"></script>
+    <link rel="import" href="node_modules/polymer/polymer.html">
+    <link rel="import" href="src/ui-check.html">
+    <style>
+      body {
+        font-family: "Helvetica Neue", "Helvetica", Arial;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <div id="holder">
+      <ui-check>
+        Bold
+      </ui-check>
+      <ui-check>
+        Italic
+      </ui-check>
+      <ui-check checked="true">
+        Awesome
+      </ui-check>
+    </div>
+    <script>
+      document.addEventListener('polymer-ready', function() {
+        //poke your element here
+      })
+    </script>
+  </body>
+</html>
