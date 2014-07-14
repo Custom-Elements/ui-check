@@ -19,20 +19,23 @@
     //em padding here ends up asymmetrical
     padding: 3px;
     .transition(@transition);
+    .light-tint;
   }
   #checkfill {
     box-sizing: border-box;
     display: inline-block;
-    .light-tint;
+    .dark-tint;
     .border;
     width: 1em;
     height: 1em;
     .transition(@input-transition);
     margin-left: 0;
+    .backface-visibility(hidden);
+    .transform(rotateY(180deg));
   }
   #check[checked] ~ #checklabel {
     #checkfill {
-      .dark-tint;
+      .transform(rotateY(0deg));
     }
   }
   //hide it this way so that we can still get keytab focus
