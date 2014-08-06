@@ -9,14 +9,15 @@ On and off in place.
 Fires when the check goes on or off.
 
 ##Attributes and Change Handlers
-###checked
+###value
 This is a nice `true` or `false` attribute to make data binding easier.
 
-      checkedChanged: (oldValue, newValue) ->
-        if @checked
+      valueChanged: (oldValue, newValue) ->
+        if @value
           @$.check.setAttribute 'checked', ''
         else
           @$.check.removeAttribute 'checked'
+        @setAttribute 'value', @value
         @fire 'change'
 
 ##Methods
@@ -26,7 +27,7 @@ Check and focus handling, these attributes are used as flags
 to control formatting.
 
       onChange: (evt) ->
-        @checked = @$.check.checked
+        @value = @$.check.checked
         evt.stopPropagation()
 
       onFocus: ->
@@ -40,10 +41,10 @@ so that we can catch clicks on the `content` to have a large hit area. But, clic
 in the rest of the control bubble too, so we need to eat those before they bubble.
 
       onContentClick: (evt) ->
-        @checked = not @checked
+        @value = not @value
 
       onCheckClick: (evt) ->
-        @checked = not @checked
+        @value = not @value
         evt.stopPropagation()
 
 ##Polymer Lifecycle
