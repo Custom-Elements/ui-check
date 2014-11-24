@@ -27,7 +27,7 @@ Check and focus handling, these attributes are used as flags
 to control formatting.
 
       onChange: (evt) ->
-        @value = @$.check.checked
+        @value = @$.check.hasAttribute 'checked'
         evt.stopPropagation()
 
       onFocus: ->
@@ -36,15 +36,11 @@ to control formatting.
       onBlur: ->
         @removeAttribute 'focused'
 
-This is a bit tricky -- need to have a click handler on the whole element
-so that we can catch clicks on the `content` to have a large hit area. But, clicks
-in the rest of the control bubble too, so we need to eat those before they bubble.
-
-      onContentClick: (evt) ->
-        @value = not @value
-
       onCheckClick: (evt) ->
         @value = not @value
+        evt.stopPropagation()
+
+      trap: (evt) ->
         evt.stopPropagation()
 
 ##Polymer Lifecycle

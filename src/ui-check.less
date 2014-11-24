@@ -31,12 +31,13 @@
     height: 1em;
     .transition(@input-transition);
     margin-left: 0;
-    .backface-visibility(hidden);
     .transform(rotateY(180deg));
+    opacity: 0;
   }
   #check[checked] ~ #checklabel {
     #checkfill {
       .transform(rotateY(0deg));
+      opacity: 1;
     }
   }
   //hide it this way so that we can still get keytab focus
