@@ -10,27 +10,25 @@
     cursor: pointer;
   }
   #checkframe {
-    box-sizing: content-box;
-    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    min-width: 1em;
     width: 1em;
+    min-height: 1em;
     height: 1em;
     .flat;
     .border;
-    margin-right: 0.5em;
-    //em padding here ends up asymmetrical
-    padding: 3px;
     .transition(@transition);
     .light-tint;
   }
   #checkfill {
-    box-sizing: border-box;
-    display: inline-block;
+    position: relative;
+    box-sizing: content-box;
+    flex: 1;
     .dark-tint;
     .border;
-    width: 1em;
-    height: 1em;
     .transition(@input-transition);
-    margin-left: 0;
     .transform(rotateY(180deg));
     opacity: 0;
   }
@@ -44,6 +42,14 @@
   input {
     position: absolute;
     opacity: 0;
+    margin: 0;
+    padding: 0;
+  }
+  ::content {
+    > :first-child {
+      margin-left: @margin;
+      cursor: pointer;
+    }
   }
 }
 
