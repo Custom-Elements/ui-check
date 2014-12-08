@@ -17,8 +17,6 @@ This is a nice `true` or `false` attribute to make data binding easier.
           @$.check.setAttribute 'checked', ''
         else
           @$.check.removeAttribute 'checked'
-        @setAttribute 'value', @value
-        @fire 'change'
 
 ##Methods
 
@@ -28,6 +26,7 @@ to control formatting.
 
       onChange: (evt) ->
         @value = @$.check.hasAttribute 'checked'
+        @fire 'change'
         evt.stopPropagation()
 
       onFocus: ->
@@ -54,3 +53,7 @@ to control formatting.
       domReady: ->
 
       detached: ->
+
+      publish:
+        value:
+          reflect: true
