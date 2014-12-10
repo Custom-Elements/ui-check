@@ -6,6 +6,7 @@
     <script src="http://localhost:35729/livereload.js"></script>
     <script src="node_modules/polymer/platform.js"></script>
     <link rel="import" href="node_modules/polymer/polymer.html">
+    <link rel="stylesheet" href="node_modules/ui-styles/visual-elements.less">
     <link rel="import" href="src/ui-check.html">
     <style>
       body {
@@ -14,7 +15,6 @@
     </style>
   </head>
   <body unresolved>
-    <div id="holder">
       <ui-check>
         <label>Bold</label>
       </ui-check>
@@ -24,7 +24,12 @@
       <ui-check value="true">
         <label>Awesome</label>
       </ui-check>
-    </div>
+      <row>
+        <ui-check></ui-check>
+        <column>
+          Some stuff
+        </column>
+      </row>
     <script>
       document.addEventListener('polymer-ready', function() {
         //poke your element here
