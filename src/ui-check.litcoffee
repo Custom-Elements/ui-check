@@ -37,10 +37,6 @@ to control formatting.
 
       onCheckClick: (evt) ->
         @value = not @value
-        evt.stopPropagation()
-
-      trap: (evt) ->
-        evt.stopPropagation()
 
 ##Polymer Lifecycle
 
