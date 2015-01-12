@@ -13,10 +13,8 @@ Fires when the check goes on or off.
 This is a nice `true` or `false` attribute to make data binding easier.
 
       valueChanged: (oldValue, newValue) ->
-        if @value
-          @$.check.setAttribute 'checked', ''
-        else
-          @$.check.removeAttribute 'checked'
+        @job 'change', =>
+          @fire 'change'
 
 ##Methods
 
@@ -25,9 +23,8 @@ Check and focus handling, these attributes are used as flags
 to control formatting.
 
       onChange: (evt) ->
-        @value = @$.check.hasAttribute 'checked'
-        @fire 'change'
         evt.stopPropagation()
+        @value = not @value
 
       onFocus: ->
         @setAttribute 'focused', ''
@@ -35,8 +32,6 @@ to control formatting.
       onBlur: ->
         @removeAttribute 'focused'
 
-      onCheckClick: (evt) ->
-        @value = not @value
 
 ##Polymer Lifecycle
 

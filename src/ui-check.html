@@ -1,8 +1,8 @@
 <polymer-element name="ui-check" attributes="value">
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-check.less">
-  <section on-click="{{onCheckClick}}">
-    <input type="checkbox" id="check" on-change="{{onChange}}" on-focus="{{onFocus}}" on-blur="{{onBlur}}">
+  <section>
+    <input type="checkbox" id="check" on-change="{{onChange}}" on-focus="{{onFocus}}" on-blur="{{onBlur}}" checked?="{{value}}">
     <label id="checklabel" for="check">
       <section id="checkframe">
         <span id="checkfill"></span>
